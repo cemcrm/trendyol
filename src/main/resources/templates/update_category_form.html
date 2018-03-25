@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8" />
+	<title>Kategori Güncelleme</title>
+	<link rel="stylesheet" href="https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css">
+	<script src="https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js"></script>
+	<script src="/js/datatable.js"></script>
+	<!-- Latest compiled and minified CSS -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+	
+	<!-- jQuery library -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+	
+	<!-- Popper JS -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	
+	<!-- Latest compiled JavaScript -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	</head>
+<body>
+<div class="container jumbotron">
+<h2>Kategori Güncelleme</h2>
+<form th:action="@{/updateCategory}" th:object="${product}" method= "post">
+  <div class="form-group">
+    <label for="id">ID</label>
+    <input type="number" readonly class="form-control" id="id" th:field="*{id}">
+  </div>
+  <div class="form-group">
+    <label for=campaignName>Kampanya Adı</label>
+    <input type="text" class="form-control" id="campaignName" th:field="*{campaignName}" required>
+  </div>
+  <div class="form-group">
+    <label for=productId>Ürün Id</label>
+    <input type="text" class="form-control" id="categoryId" th:field="*{categoryId}" required>
+  </div>
+  <div class="form-group">
+    <label for=productName>Ürün Adı</label>
+    <input type="text" class="form-control" id="categoryName" th:field="*{categoryName}" required>
+  </div>
+  <div class="form-group">
+    <label for=type>Tip</label>
+    <input type="text" class="form-control" id="type" th:field="*{type}" required>
+  </div>
+  <div class="form-group">
+    <label for=discount>İndirim</label>
+    <input type="text" class="form-control" id="discount" th:field="*{discount}" required>
+  </div>
+  <div class="form-group">
+    <label for=maxDiscount>Max İndirim</label>
+    <input type="text" class="form-control" id="maxDiscount" th:field="*{maxDiscount}">
+  </div>
+  <button type="submit" class="btn btn-primary">Submit</button>
+  <a href="/categories" class="btn btn-info" role="button">Geri</a>
+</form>
+</div>
+</body>
+</html>
